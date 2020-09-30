@@ -1,6 +1,11 @@
 FROM node:12.11.1-slim
+
+WORKDIR /
+
 RUN npm install -g json-server
 
-ADD run.sh default.json /
+COPY . /
+
 ENTRYPOINT ["bash", "/run.sh"]
+
 CMD []
